@@ -19,12 +19,13 @@ public class GuessingGame {
         while (true) { // Loop until 'break'
             ///// Start of code for human
             Scanner input = new Scanner(System.in);
-            System.out.print("Enter your guess between 1 to 100: ");
+            System.out.print("\nEnter your guess between 1 to 100: ");
             int playerGuess = input.nextInt();
             manjeet.incrementGuesses();
 
             if (playerGuess == randomNumber) {
                 System.out.println("You guessed it right! the number is " + randomNumber);
+                System.out.println("Manjeet you took " + manjeet.numOfGuesses + " of guesses: ");
                 break;
             } else if (playerGuess > randomNumber) {
                 System.out.println("Your guess is too high.");
@@ -34,7 +35,7 @@ public class GuessingGame {
 
             ///// Start of code for computer
             int computerGuess = computer.computerGuess();
-            System.out.println("Computer guessed " + computerGuess);
+            System.out.println("\nComputer guessed " + computerGuess);
             computer.incrementGuesses();
 
             if (computerGuess != randomNumber) {
@@ -42,6 +43,7 @@ public class GuessingGame {
             }
             if (computerGuess == randomNumber) {
                 System.out.println("Computer guessed it right! the number is " + randomNumber);
+                System.out.println("Computer took " + computer.numOfGuesses + " of guesses: ");
                 break;
             } else {
                 if (computerGuess > randomNumber) {
